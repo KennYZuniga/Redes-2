@@ -21,6 +21,8 @@ PUTTY
  DCE HEMBRA entorno de comunicacion de datos (clock rate permitido)   DTE MACHO entorno de transmision de datos
 7. enable / show ip int brief / config t / int s0/1/0 / clock rate 128000  /  exit
 8. int g0/0 / ip address 172.16.0.1 255.255.0.0 / no shutdown / end
+-------------------------------------------------------------------------------------------
+
 
  
 
