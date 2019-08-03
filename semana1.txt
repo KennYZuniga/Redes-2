@@ -1,0 +1,24 @@
+ing. Leonel Venero Benavente
+cables cruzados (2 m y 4 m)
+cables directos (2 m y 4 m)
+conector---------B----------jack
+
+modelo tcp/ip 
+aplicacion
+transporte
+red
+Acceso a la red
+
+PUTTY
+1. serial   :   windows + pause  vizualizar el COM en el administrador de dispositivos
+2. open     :   enter / despues no
+3. enable / erase starup-config
+4. reload   : para resetear el router
+ el conector macho es para trasmision de datos y hembra para comunicacion de datos / si un router trabaja con clock rate, solo con ese se usara
+5. line console 0 / password redes / login / exit
+6. enable password ccna / exit / wr
+ poner primero la contra de la consola luego el passwoed de del router
+
+ 
+
+
