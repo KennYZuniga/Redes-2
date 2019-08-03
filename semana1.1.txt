@@ -1,6 +1,7 @@
 ing. Leonel Venero Benavente
 cables cruzados (2 m y 4 m)
 cables directos (2 m y 4 m)
+extension 8m (CONECTOR Y JACK)
 conector---------B----------jack
 
 modelo tcp/ip 
@@ -22,6 +23,7 @@ PUTTY
 7. enable / show ip int brief / config t / int s0/1/0 / clock rate 128000  /  exit
 8. int g0/0 / ip address 172.16.0.1 255.255.0.0 / no shutdown / end
 -------------------------------------------------------------------------------------------
+
 
 
  
