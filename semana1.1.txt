@@ -10,7 +10,7 @@ transporte
 red
 Acceso a la red
 
-PUTTY
+PUTTY ROUTER
 1. serial   :   windows + pause  vizualizar el COM en el administrador de dispositivos
 2. open     :   enter / despues no
 3. enable / erase starup-config
@@ -23,6 +23,9 @@ PUTTY
 7. enable / show ip int brief / config t / int s0/1/0 / clock rate 128000  /  exit
 8. int g0/0 / ip address 172.16.0.1 255.255.0.0 / no shutdown / end
 -------------------------------------------------------------------------------------------
+DESPUES DE BREAK
+SWITCH
+1. show version / enable / show flash / show ip int brief
 
 
 
