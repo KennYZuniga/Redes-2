@@ -1,0 +1,628 @@
+[1mdiff --git a/Capitulo 1.pptx b/Capitulo 1.pptx[m
+[1mdeleted file mode 100644[m
+[1mindex 5445da8..0000000[m
+Binary files a/Capitulo 1.pptx and /dev/null differ
+[1mdiff --git a/Lab 01.docx b/Lab 01.docx[m
+[1mdeleted file mode 100644[m
+[1mindex 923f05b..0000000[m
+[1m--- a/Lab 01.docx[m	
+[1m+++ /dev/null[m
+[36m@@ -1,203 +0,0 @@[m
+[31m-Práctica de laboratorio: Exploración de las características físicas del router [m
+[31m-Topología[m
+[31m-[m
+[31m-Objetivos[m
+[31m-Parte 1: Examinar las características externas del router[m
+[31m-Parte 2: Examinar las características internas del router con los comandos show[m
+[31m-Aspectos básicos/situación[m
+[31m-En esta práctica de laboratorio, examinará el exterior del router para familiarizarse con las características y componentes de este, como el interruptor de alimentación, los puertos de administración, las interfaces LAN y WAN, las luces indicadoras, las ranuras de expansión de red, las ranuras de expansión de memoria y los puertos USB.[m
+[31m-También identificará las características y los componentes internos del IOS al acceder al router mediante el puerto de consola y emitir diversos comandos, como show version y show interfaces, desde la CLI.[m
+[31m-Nota: los routers que se utilizan en las prácticas de laboratorio de CCNA son routers de servicios integrados (ISR) Cisco de la serie 1941 con Cisco IOS versión 15.2(4)M3 (imagen universalk9). Se pueden utilizar otros routers y otras versiones de Cisco IOS. Según el modelo y la versión de Cisco IOS, los comandos disponibles y los resultados que se obtienen pueden diferir de los que se muestran en las prácticas de laboratorio.[m
+[31m-Nota: asegúrese de que los routers se hayan borrado y no tengan configuraciones de inicio. Si no está seguro, consulte al instructor.[m
+[31m-Recursos necesarios[m
+[31m-1 router (Cisco 1941 con Cisco IOS versión 15.2(4)M3, imagen universal o similar)[m
+[31m-1 PC (Windows 7 u 8 con un programa de emulación de terminal, como Tera Term)[m
+[31m-Cables de consola para configurar los dispositivos con Cisco IOS mediante los puertos de consola[m
+[31m-Examinar las características externas del router[m
+[31m-Utilice las imágenes de la placa de circuito de un router Cisco que se muestran a continuación, así como su observación directa, para responder las siguientes preguntas. Puede dibujar flechas y rodear con círculos las áreas de la imagen que identifican correctamente las partes.[m
+[31m-Nota: el router que se muestra en las imágenes siguientes es un router Cisco de la serie 1941, que puede ser diferente en marca y modelo de los routers de su academia particular. Para obtener información sobre el dispositivo y especificaciones de los routers Cisco de la serie 1941, acceda al sitio web www.Cisco.com. En este enlace, puede encontrar información adicional e incluso las respuestas a muchas de las preguntas que se formulan más adelante:[m
+[31m-http://www.cisco.com/en/US/prod/collateral/routers/ps10538/data_sheet_c78_556319.html[m
+[31m-Identificar las diversas partes de un router Cisco.[m
+[31m-La imagen que se muestra en este paso corresponde a la placa de circuito de un ISR Cisco de la serie 1941. Utilícela para responder las preguntas de este paso. Asimismo, si examina un router de un modelo diferente, aquí se brinda un espacio para que dibuje la placa de circuito e identifique los componentes y las interfaces como se especifica en las preguntas que siguen.[m
+[31m-[m
+[31m-[m
+[31m-Rodee con un círculo y rotule el interruptor de alimentación del router. ¿El interruptor de alimentación en el router se encuentra en la misma área que en el router que se muestra en la imagen?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-Rodee con un círculo y rotule los puertos de administración. ¿Cuáles son los puertos de administración incorporados? ¿Los puertos de administración son los mismos en su router? Si su respuesta es negativa, ¿cuál es la diferencia?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-Rodee con un círculo y rotule las interfaces de la red LAN del router. ¿Cuántas interfaces de la red LAN tiene el router en la imagen y cuál es el tipo de tecnología de la interfaz? ¿Las interfaces de la red LAN son las mismas en su router? Si su respuesta es negativa, ¿cuál es la diferencia?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-Rodee con un círculo y rotule las interfaces WAN del router. ¿Cuántas interfaces WAN tiene el router en la imagen y cuál es el tipo de tecnología de la interfaz? ¿Las interfaces WAN son las mismas en su router? Si su respuesta es negativa, ¿cuál es la diferencia?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-El ISR Cisco de la serie 1941 es una plataforma modular e incluye ranuras de expansión de módulo que permiten satisfacer los diversos requisitos de conectividad de red. Rodee con un círculo y rotule las ranuras de módulo. ¿Cuántas ranuras de módulo hay? ¿Cuántas se utilizan? ¿Qué tipo de ranuras de expansión de módulo son? ¿Las ranuras de módulo son las mismas en su router? Si su respuesta es negativa, ¿cuál es la diferencia?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-El router Cisco de la serie 1941 tiene ranuras para memoria CompactFlash para el almacenamiento de alta velocidad. Rodee con un círculo y rotule las ranuras para memoria CompactFlash. ¿Cuántas ranuras de memoria hay? ¿Cuántas se utilizan? ¿Cuál es la capacidad de memoria de cada tarjeta? ¿Las ranuras de memoria son las mismas en su router? Si su respuesta es negativa, ¿cuál es la diferencia?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-El router Cisco de la serie 1941 tiene puertos USB 2.0. Los puertos USB incorporados admiten dispositivos eToken y memoria flash USB. La característica de dispositivo USB eToken proporciona la autenticación del dispositivo y la configuración segura de los routers Cisco. La característica de memoria flash USB proporciona la capacidad de almacenamiento secundario optativa y un dispositivo de arranque adicional. Rodee con un círculo y rotule los puertos USB. ¿Cuántos puertos USB hay? ¿Hay puertos USB en su router?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-El router Cisco de la serie 1941 también tiene un puerto de consola USB mini-B. Rodee con un círculo y rotule el puerto de consola USB mini-B.[m
+[31m-    ____________________________________________________________________________________[m
+[31m-Examinar las luces de actividad y de estado del router.[m
+[31m-En las imágenes siguientes, se destacan las luces de actividad y estado del panel frontal y la placa de circuito de un ISR Cisco de la serie 1941 encendido y conectado.[m
+[31m-Nota: algunas de las luces indicadoras están ocultas en la imagen de la placa de circuito del router Cisco de la serie 1941 que se muestra a continuación.[m
+[31m-[m
+[31m-[m
+[31m-En la imagen de más arriba, revise las luces indicadoras en el panel frontal del router. Las luces están rotuladas SYS, ACT y POE. ¿A qué se refieren estos rótulos? ¿Qué indican las luces en la imagen sobre el estado del router? Estos rótulos se podrían leer si no estuvieran encendidos.[m
+[31m-    ____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-En la imagen de la placa de circuito anterior, examine las luces indicadoras en el router. Hay tres luces de actividad visibles, una por cada una de las interfaces conectadas y los puertos de administración. Examine las luces de interfaz en su router. ¿Cómo están rotuladas las luces y cuál es su significado?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-Además de los puertos de administración y de las interfaces de red, ¿qué otras luces indicadoras se encuentran en la placa de circuito del router y cuál sería su propósito?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-Examinar las características internas del router utilizando los comandos show[m
+[31m-Establecer una conexión de consola al router y utilizar el comando show version.[m
+[31m-A través de Tera Term, acceda al router mediante el puerto de consola e ingrese al modo EXEC privilegiado con el comando enable:[m
+[31m-Router> enable[m
+[31m-Router#[m
+[31m-Muestre la información sobre el router utilizando el comando show version. Utilice la barra espaciadora del teclado para avanzar por el resultado.[m
+[31m-Router# show version[m
+[31m-Cisco IOS Software, C1900 Software (C1900-UNIVERSALK9-M), Version 15.2(4)M3, RELEASE SOFTWARE (fc1)[m
+[31m-Technical Support: http://www.cisco.com/techsupport[m
+[31m-Copyright (c) 1986-2011 by Cisco Systems, Inc.[m
+[31m-Compiled Thu 26-Jul-12 19:34 by prod_rel_team[m
+[31m-[m
+[31m-ROM: System Bootstrap, Version 15.0(1r)M15, RELEASE SOFTWARE (fc1)[m
+[31m-[m
+[31m-Router uptime is 1 day, 14 hours, 46 minutes[m
+[31m-System returned to ROM by power-on[m
+[31m-System restarted at 07:26:55 UTC Mon Dec 3 2012[m
+[31m-System image file is "flash0:c1900-universalk9-mz.SPA.152-4.M3.bin"[m
+[31m-Last reload type: Normal Reload[m
+[31m-Last reload reason: power-on[m
+[31m-[m
+[31m-<resultado omitido>[m
+[31m-[m
+[31m-If you require further assistance please contact us by sending email to[m
+[31m-export@cisco.com.[m
+[31m-[m
+[31m-Cisco CISCO1941/K9 (revision 1.0) with 487424K/36864K bytes of memory.[m
+[31m-Processor board ID FGL16082318[m
+[31m-2 Gigabit Ethernet interfaces[m
+[31m-2 Serial(sync/async) interfaces[m
+[31m-1 terminal line[m
+[31m-1 Virtual Private Network (VPN) Module[m
+[31m-DRAM configuration is 64 bits wide with parity disabled.[m
+[31m-255K bytes of non-volatile configuration memory.[m
+[31m-250880K bytes of ATA System CompactFlash 0 (Read/Write)[m
+[31m-<resultado omitido>[m
+[31m-[m
+[31m-Technology Package License Information for Module:'c1900'[m
+[31m-[m
+[31m------------------------------------------------------------------[m
+[31m-Technology    Technology-package           Technology-package[m
+[31m-              Current       Type           Next reboot[m
+[31m-------------------------------------------------------------------[m
+[31m-ipbase        ipbasek9      Permanent      ipbasek9[m
+[31m-security      securityk9    Permanent      securityk9[m
+[31m-data          None          None           None[m
+[31m-[m
+[31m-Configuration register is 0x2102[m
+[31m-En función del resultado del comando show version, responda las siguientes preguntas sobre el router. Si está examinando un router de otro modelo, incluya la información aquí.[m
+[31m-¿Cuál es la versión de Cisco IOS y cuál es el nombre de archivo de imagen de sistema?[m
+[31m-      ________________________________________________________________________________[m
+[31m-¿Cuál es la versión del programa de arranque en ROM BIOS?[m
+[31m-      ________________________________________________________________________________[m
+[31m-¿Cuánto tiempo estuvo en funcionamiento el router sin ser reiniciado (lo que también se conoce como su tiempo de actividad)?[m
+[31m-      ________________________________________________________________________________[m
+[31m-¿Cuánta memoria de acceso aleatorio dinámica (DRAM) tiene el router?[m
+[31m-      ________________________________________________________________________________[m
+[31m-¿Cuál es el número de ID de la placa del procesador del router?[m
+[31m-      ________________________________________________________________________________[m
+[31m-¿Qué interfaces de red tiene el router?[m
+[31m-      ________________________________________________________________________________[m
+[31m-¿Cuánta memoria CompactFlash hay para el almacenamiento del IOS?[m
+[31m-      ________________________________________________________________________________[m
+[31m-¿Cuánta memoria de acceso aleatorio no volátil (NVRAM) hay para el almacenamiento de archivos de configuración?[m
+[31m-      ________________________________________________________________________________[m
+[31m-¿Cuál es la configuración del registro de configuración?[m
+[31m-      ________________________________________________________________________________[m
+[31m-Utilizar el comando show interface para examinar las interfaces de red.[m
+[31m-Utilice el comando show interface gigabitEthernet 0/0 para ver el estado de la interfaz Gigabit Ethernet 0/0.[m
+[31m-    Nota: después de escribir parte del comando, por ejemplo, show interface g, puede utilizar la tecla de tabulación del teclado para completar el parámetro del comando gigabitEthernet.[m
+[31m-Router# show interface gigabitEthernet 0/0[m
+[31m-GigabitEthernet0/0 is administratively down, line protocol is down[m
+[31m-  Hardware is CN Gigabit Ethernet, address is 442b.031a.b9a0 (bia 442b.031a.b9a0)[m
+[31m-  MTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,[m
+[31m-     reliability 255/255, txload 1/255, rxload 1/255[m
+[31m-  Encapsulation ARPA, loopback not set[m
+[31m-  Keepalive set (10 sec)[m
+[31m-  Full Duplex, 100Mbps, media type is RJ45[m
+[31m-  output flow-control is unsupported, input flow-control is unsupported[m
+[31m-  ARP type: ARPA, ARP Timeout 04:00:00[m
+[31m-  Last input never, output never, output hang never[m
+[31m-  Last clearing of "show interface" counters never[m
+[31m-  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0[m
+[31m-  Queueing strategy: fifo[m
+[31m-  Output queue: 0/40 (size/max)[m
+[31m-  5 minute input rate 0 bits/sec, 0 packets/sec[m
+[31m-  5 minute output rate 0 bits/sec, 0 packets/sec[m
+[31m-     3 packets input, 276 bytes, 0 no buffer[m
+[31m-     Received 0 broadcasts (0 IP multicasts)[m
+[31m-     0 runts, 0 giants, 0 throttles[m
+[31m-     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored[m
+[31m-     0 watchdog, 0 multicast, 0 pause input[m
+[31m-     0 packets output, 0 bytes, 0 underruns[m
+[31m-     0 output errors, 0 collisions, 0 interface resets[m
+[31m-     0 unknown protocol drops[m
+[31m-     0 babbles, 0 late collision, 0 deferred[m
+[31m-     0 lost carrier, 0 no carrier, 0 pause output[m
+[31m-     0 output buffer failures, 0 output buffers swapped out[m
+[31m-Dado el resultado del comando show interface gigabitEthernet 0/0 que se muestra arriba, o utilizando el resultado de su router, responda las siguientes preguntas:[m
+[31m-    ¿Cuál es el tipo de hardware y la dirección MAC de la interfaz Gigabit Ethernet?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-    ¿Cuál es el tipo de medios de la interfaz? ¿La interfaz está activa o inactiva?[m
+[31m-    ____________________________________________________________________________________[m
+[31m-Utilice el comando show interfaces serial 0/0/0 para ver el estado de la interfaz serial 0/0/0.[m
+[31m-Router# show interface serial 0/0/0[m
+[31m-Serial0/0/0 is administratively down, line protocol is down[m
+[31m-  Hardware is WIC MBRD Serial[m
+[31m-  MTU 1500 bytes, BW 1544 Kbit/sec, DLY 20000 usec,[m
+[31m-     reliability 255/255, txload 1/255, rxload 1/255[m
+[31m-  Encapsulation HDLC, loopback not set[m
+[31m-  Keepalive set (10 sec)[m
+[31m-  Last input 07:41:21, output never, output hang never[m
+[31m-  Last clearing of "show interface" counters never[m
+[31m-  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0[m
+[31m-  Queueing strategy: fifo[m
+[31m-  Output queue: 0/40 (size/max)[m
+[31m-  5 minute input rate 0 bits/sec, 0 packets/sec[m
+[31m-  5 minute output rate 0 bits/sec, 0 packets/sec[m
+[31m-     1 packets input, 24 bytes, 0 no buffer[m
+[31m-     Received 1 broadcasts (0 IP multicasts)[m
+[31m-     0 runts, 0 giants, 0 throttles[m
+[31m-     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort[m
+[31m-     0 packets output, 0 bytes, 0 underruns[m
+[31m-     0 output errors, 0 collisions, 2 interface resets[m
+[31m-     0 unknown protocol drops[m
+[31m-     0 output buffer failures, 0 output buffers swapped out[m
+[31m-     1 carrier transitions[m
+[31m-     DCD=down  DSR=down  DTR=down  RTS=down  CTS=down[m
+[31m-Dado el resultado del comando que se muestra arriba, responda las siguientes preguntas:[m
+[31m-    ¿Cuál es el tipo de encapsulamiento de la trama?[m
+[31m-    ___________________________________________________________________________________[m
+[31m-    ¿Cuál es el tipo de hardware? ¿La interfaz está activa o inactiva?[m
+[31m-    ___________________________________________________________________________________[m
+[31m-Reflexión[m
+[31m-¿Por qué podría ser necesario utilizar una ranura de expansión EHWIC?[m
+[31m-____________________________________________________________________________________[m
+[31m-¿Por qué podría ser necesario actualizar la memoria flash?[m
+[31m-____________________________________________________________________________________[m
+[31m-¿Cuál es el propósito del puerto mini-USB?[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-¿Cuál es el propósito de la luz indicadora ISM/WLAN en la placa de circuito del router? ¿A qué hace referencia?[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[1mdiff --git a/Lab 02.docx b/Lab 02.docx[m
+[1mdeleted file mode 100644[m
+[1mindex 8b53719..0000000[m
+[1m--- a/Lab 02.docx[m	
+[1m+++ /dev/null[m
+[36m@@ -1,160 +0,0 @@[m
+[31m-Práctica de laboratorio: Establecimiento de una sesión de consola con Tera Term [m
+[31m-Topología[m
+[31m-[m
+[31m-Objetivos[m
+[31m-Parte 1: Acceder a un switch Cisco a través del puerto serie de consola[m
+[31m-Parte 2: Mostrar y configurar parámetros básicos de los dispositivos[m
+[31m-Parte 3: Acceder a un router Cisco mediante un cable de consola mini-USB (opcional)[m
+[31m-Nota: Los usuarios en Netlab o en otro equipo de acceso remoto deben completar solo la parte 2.[m
+[31m-Información básica/situación[m
+[31m-Se utiliza una variedad de modelos de switches y routers Cisco en redes de todo tipo. Estos dispositivos se administran mediante una conexión de consola local o una conexión remota. Casi todos los dispositivos Cisco tienen un puerto serie de consola al que el usuario puede conectarse. Algunos modelos más nuevos, como el router de servicios integrados (ISR) 1941 G2, que se utiliza en esta práctica de laboratorio, también tienen un puerto de consola USB.[m
+[31m-En esta práctica de laboratorio, aprenderá cómo acceder a un dispositivo Cisco a través de una conexión local directa al puerto de consola mediante un programa de emulación de terminal, llamado Tera Term. También aprenderá a configurar los parámetros del puerto serie para la conexión de consola de Tera Term. Después de establecer una conexión de la consola con el dispositivo Cisco, puede ver o modificar la configuración del dispositivo. En esta práctica de laboratorio, solo mostrará los parámetros y configurará el reloj.[m
+[31m-Nota: Los routers que se utilizan en las prácticas de laboratorio de CCNA son routers de servicios integrados Cisco 1941 con Cisco IOS versión 15.2(4)M3 (imagen universalk9). Los switches que se utilizan son Cisco Catalyst 2960s con Cisco IOS versión 15.0(2) (imagen de lanbasek9). Se pueden utilizar otros routers, switches y otras versiones de Cisco IOS. Según el modelo y la versión de Cisco IOS, los comandos disponibles y los resultados que se obtienen pueden diferir de los que se muestran en las prácticas de laboratorio. Consulte la tabla Resumen de interfaces del router al final de la práctica de laboratorio para obtener los identificadores de interfaz correctos.[m
+[31m-Nota: Asegúrese de que el switch y el router se hayan borrado y no tengan configuraciones de inicio. Si no está seguro, consulte al instructor.[m
+[31m-Recursos necesarios[m
+[31m-1 router (Cisco 1941 con software Cisco IOS versión 15.2(4)M3, imagen universal o similar)[m
+[31m-1 switch (Cisco 2960 con Cisco IOS versión 15.0(2), imagen lanbasek9 o comparable)[m
+[31m-1 PC (Windows 7 u 8 con un programa de emulación de terminal, como Tera Term)[m
+[31m-Cable de consola (DB-9 a RJ-45) para configurar el switch o el router a través del puerto de consola RJ-45[m
+[31m-Cable mini-USB para configurar el router a través del puerto de consola USB[m
+[31m-Acceso a un switch Cisco a través del puerto serie de consola[m
+[31m-Conectará una PC a un switch Cisco mediante un cable de consola. Esta conexión le permitirá acceder a la interfaz de línea de comandos (CLI) y mostrar los parámetros o configurar el switch.[m
+[31m-Conecte un switch Cisco y una PC mediante un cable de consola.[m
+[31m-Conecte el cable de consola al puerto de consola RJ-45 del switch.[m
+[31m-Conecte el otro extremo del cable al puerto serie COM de la PC.[m
+[31m-Nota: La mayoría de las PC actuales no tienen puertos serie COM. Se puede utilizar un adaptador de USB a DB9 con el cable de consola para realizar la conexión de consola entre la PC y un dispositivo Cisco. Estos adaptadores de USB a DB9 pueden adquirirse en cualquier tienda de electrónica informática.[m
+[31m-Nota: Si utiliza un adaptador de USB a DB9 para conectar el puerto COM, puede ser necesario instalar un controlador para el adaptador proporcionado por el fabricante de la PC. Para determinar el puerto COM que utiliza el adaptador, consulte el paso 4 de la parte 3. Se requiere el número de puerto COM correcto para conectar el dispositivo Cisco IOS por medio de un emulador de terminal en el paso 2.[m
+[31m-Encienda el switch de Cisco y la PC.[m
+[31m-[m
+[31m-Configure Tera Term para establecer una sesión de consola con el switch[m
+[31m-Tera Term es un programa de emulación de terminal. Este programa le permite acceder al resultado para el terminal del switch. También le permite configurar el switch.[m
+[31m-Inicie Tera Term haciendo clic en el botón Inicio de Windows, situado en la barra de tareas. Localice Tera Term en Todos los programas.[m
+[31m-Nota: Si el programa no está instalado en el sistema, Tera Term se puede descargar del siguiente enlace seleccionando Tera Term:[m
+[31m-http://logmett.com/index.php?/download/free-downloads.html[m
+[31m-En el cuadro de diálogo Conexión nueva, haga clic en el botón de opción Serial. Verifique que esté seleccionado el puerto COM correcto y haga clic en Aceptar para continuar.[m
+[31m-[m
+[31m-En el menú Configuración de Tera Term, seleccione Puerto serie... para verificar los parámetros de serie. Los parámetros predeterminados para el puerto de consola son 9600 baudios, 8 bits de datos, ninguna paridad, 1 bit de parada y ningún control del flujo. Los parámetros predeterminados de Tera Term coinciden con los parámetros del puerto de consola para las comunicaciones con el switch de Cisco IOS.[m
+[31m-[m
+[31m-Cuando pueda ver el resultado de terminal, estará listo para configurar un switch de Cisco. El siguiente ejemplo de la consola muestra el resultado para el terminal del switch durante la carga.[m
+[31m-[m
+[31m-Muestra y configuración de parámetros básicos de los dispositivos[m
+[31m-En esta sección, se le presentan los modos de ejecución privilegiado y de usuario. Debe determinar la versión del Sistema operativo Internetwork (IOS), mostrar los parámetros del reloj y configurar el reloj en el switch.[m
+[31m-Muestre la versión de la imagen del IOS del switch.[m
+[31m-Una vez que el switch completa el proceso de inicio, se muestra el siguiente mensaje. Introduzca n para continuar.[m
+[31m-Would you like to enter the initial configuration dialog? [yes/no]: n[m
+[31m-Nota: Si no ve el mensaje que se muestra arriba, consulte con el instructor para restablecer el switch a la configuración inicial.[m
+[31m-En el modo EXEC del usuario, muestre la versión del IOS para el switch.[m
+[31m-Switch> show version[m
+[31m-Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE, RELEASE SOFTWARE (fc1)[m
+[31m-Technical Support: http://www.cisco.com/techsupport[m
+[31m-Copyright (c) 1986-2012 by Cisco Systems, Inc.[m
+[31m-Compiled Sat 28-Jul-12 00:29 by prod_rel_team[m
+[31m-[m
+[31m-ROM: Bootstrap program is C2960 boot loader[m
+[31m-BOOTLDR: C2960 Boot Loader (C2960-HBOOT-M) Version 12.2(53r)SEY3, RELEASE SOFTWARE (fc1)[m
+[31m-[m
+[31m-Switch uptime is 2 minutes[m
+[31m-System returned to ROM by power-on[m
+[31m-System image file is "flash://c2960-lanbasek9-mz.150-2.SE.bin"[m
+[31m-<resultado omitido>[m
+[31m-¿Qué versión de la imagen del IOS utiliza actualmente el switch?[m
+[31m-____________________________________________________________________________________[m
+[31m-Configure el reloj.[m
+[31m-A medida que aprenda más sobre redes, verá que configurar la hora correcta en un switch de Cisco puede resultar útil cuando trabaja en la solución de problemas. Mediante los siguientes pasos, se configura manualmente el reloj interno del switch.[m
+[31m-Muestre la configuración actual del reloj.[m
+[31m-Switch> show clock[m
+[31m-*00:30:05.261 UTC Mon Mar 1 1993[m
+[31m-La configuración del reloj se cambia en el modo EXEC privilegiado. Para acceder al modo EXEC privilegiado, escriba enable en la petición de entrada del modo EXEC del usuario.[m
+[31m-Switch> enable[m
+[31m-Configure los parámetros del reloj. El signo de interrogación (?) proporciona ayuda y le permite determinar la información de entrada esperada para configurar la hora, la fecha y el año actuales. Presione Intro para completar la configuración del reloj.[m
+[31m-Switch# clock set ?[m
+[31m-hh:mm:ss Current Time[m
+[31m-[m
+[31m-Switch#clock set 15:08:00 ?[m
+[31m-  <1-31>  Day of the month[m
+[31m-  MONTH   Month of the year[m
+[31m-[m
+[31m-Switch#clock set 15:08:00 Oct 26 ?[m
+[31m-  <1993-2035>  Year[m
+[31m-[m
+[31m-Switch#clock set 15:08:00 Oct 26 2012[m
+[31m-Switch#[m
+[31m-*Oct 26 15:08:00.000: %SYS-6-CLOCKUPDATE: System clock has been updated from 00:31:43 UTC Mon Mar 1 1993 to 15:08:00 UTC Fri Oct 26 2012, configured from console by console.[m
+[31m-Introduzca el comando show clock para verificar que los parámetros del reloj se hayan actualizado.[m
+[31m-Switch#show clock[m
+[31m-15:08:07.205 UTC Fri Oct 26 2012[m
+[31m-Acceso a un router Cisco mediante un cable de consola mini-USB (opcional)[m
+[31m-Si utiliza un router Cisco 1941 u otros dispositivos Cisco IOS con un puerto de consola mini-USB, puede acceder al puerto de consola del dispositivo mediante un cable mini-USB conectado al puerto USB en su PC.[m
+[31m-Nota: El cable de consola mini-USB es el mismo tipo de cable mini-USB que se utiliza con otros dispositivos electrónicos, como discos duros USB, impresoras USB o hubs USB. Estos cables mini-USB pueden adquirirse a través de Cisco Systems, Inc. o de otros proveedores. Asegúrese de utilizar un cable mini-USB (y no un cable micro-USB) para conectarse al puerto de consola mini-SUB en un dispositivo Cisco IOS.[m
+[31m-[m
+[31m-Nota: Debe utilizar el puerto USB o el puerto RJ-45. No se deben usar ambos de manera simultánea. Cuando se utiliza el puerto USB, tiene prioridad sobre el puerto de consola RJ-45.[m
+[31m-Configure la conexión física con un cable mini-USB.[m
+[31m-Conecte el cable mini-USB al puerto de consola mini-USB del router.[m
+[31m-Conecte el otro extremo del cable a un puerto USB de la PC.[m
+[31m-Encienda el router de Cisco y la PC.[m
+[31m-[m
+[31m-Verifique que la consola USB está lista.[m
+[31m-Si utiliza una PC con Microsoft Windows y el indicador LED del puerto de consola USB (con el rótulo EN) no se vuelve de color verde, instale el controlador de consola USB de Cisco.[m
+[31m-Se debe instalar un controlador USB antes de conectar una PC con Microsoft Windows a un dispositivo Cisco IOS con un cable USB. El controlador USB se puede encontrar en www.cisco.com [HYPERLINK: http://www.cisco.com/] con el dispositivo Cisco IOS relacionado. El controlador USB puede descargarse del siguiente enlace:[m
+[31m-http://www.cisco.com/cisco/software/release.html?mdfid=282774238&flowid=714&softwareid=282855122&release=3.1&relind=AVAILABLE&rellifecycle=&reltype=latest[m
+[31m-Nota: Para descargar este archivo, debe tener una cuenta válida de Cisco Connection Online (CCO).[m
+[31m-Nota: Este enlace está relacionado con el router Cisco 1941. Sin embargo, el controlador de la consola USB no es específico de un modelo de dispositivo de Cisco IOS. Este controlador de consola USB funciona solamente con switches y routers Cisco. Para finalizar la instalación del controlador USB, se debe reiniciar la PC.[m
+[31m-Nota: Una vez extraídos los archivos, la carpeta contiene instrucciones de instalación y remoción, y los controladores necesarios para los distintos sistemas operativos y arquitecturas. Seleccione la versión adecuada para su sistema.[m
+[31m-Cuando el indicador LED del puerto de consola USB se vuelve de color verde, el puerto USB está listo para el acceso.[m
+[31m-Habilitación del puerto COM para la PC con Windows 7 (opcional)[m
+[31m-Si utiliza una PC con Microsoft Windows 7, tal vez necesita realizar los siguientes pasos para habilitar el puerto COM:[m
+[31m-Haga clic en el ícono de Inicio de Microsoft para acceder al Panel de control.[m
+[31m-Abra el Administrador de dispositivos.[m
+[31m-Haga clic en el enlace de árbol Puertos (COM y LPT) para expandirlo. Haga clic con el botón secundario en el ícono Puerto serial USB y seleccione Actualizar software de controlador.[m
+[31m-[m
+[31m-Seleccione Buscar software de controlador en el equipo.[m
+[31m-[m
+[31m-Seleccione Elegir en una lista de controladores de dispositivo en el equipo y haga clic en Siguiente.[m
+[31m-[m
+[31m-Seleccione el controlador Cisco Serial y haga clic en Siguiente.[m
+[31m-[m
+[31m-Tome nota del número de puerto asignado en la parte superior de la ventana. En este ejemplo, se utiliza COM 5 para la comunicación con el router. Haga clic en Cerrar.[m
+[31m-[m
+[31m-Abra Tera Term. Haga clic en el botón de opción Serial y seleccione el puerto serial adecuado, que es Port COM5: Cisco Serial (COM 5) en este ejemplo. Este puerto ahora debe estar disponible para la comunicación con el router. Haga clic en Aceptar.[m
+[31m-                                       [m
+[31m-Reflexión[m
+[31m-¿Cómo evita que personal no autorizado acceda a su dispositivo Cisco a través del puerto de consola?[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-¿Cuáles son las ventajas y desventajas de usar la conexión serial de consola en comparación con la conexión USB de consola a un switch o un router Cisco?[m
+[31m-____________________________________________________________________________________[m
+[31m-____________________________________________________________________________________[m
+[31m-Tabla de resumen de interfaces de router[m
+[31m-Resumen de interfaces de router[m
+[31m-Modelo de router[m
+[31m-Interfaz Ethernet 1[m
+[31m-Interfaz Ethernet 2[m
+[31m-Interfaz serial 1[m
+[31m-Interfaz serial 2[m
+[31m-1800[m
+[31m-Fast Ethernet 0/0 (F0/0)[m
+[31m-Fast Ethernet 0/1 (F0/1)[m
+[31m-Serial 0/0/0 (S0/0/0)[m
+[31m-Serial 0/0/1 (S0/0/1)[m
+[31m-1900[m
+[31m-Gigabit Ethernet 0/0 (G0/0)[m
+[31m-Gigabit Ethernet 0/1 (G0/1)[m
+[31m-Serial 0/0/0 (S0/0/0)[m
+[31m-Serial 0/0/1 (S0/0/1)[m
+[31m-2801[m
+[31m-Fast Ethernet 0/0 (F0/0)[m
+[31m-Fast Ethernet 0/1 (F0/1)[m
+[31m-Serial 0/1/0 (S0/1/0)[m
+[31m-Serial 0/1/1 (S0/1/1)[m
+[31m-2811[m
+[31m-Fast Ethernet 0/0 (F0/0)[m
+[31m-Fast Ethernet 0/1 (F0/1)[m
+[31m-Serial 0/0/0 (S0/0/0)[m
+[31m-Serial 0/0/1 (S0/0/1)[m
+[31m-2900[m
+[31m-Gigabit Ethernet 0/0 (G0/0)[m
+[31m-Gigabit Ethernet 0/1 (G0/1)[m
+[31m-Serial 0/0/0 (S0/0/0)[m
+[31m-Serial 0/0/1 (S0/0/1)[m
+[31m-Nota: Para conocer la configuración del router, observe las interfaces a fin de identificar el tipo de router y cuántas interfaces tiene. No existe una forma eficaz de confeccionar una lista de todas las combinaciones de configuraciones para cada clase de router. En esta tabla, se incluyen los identificadores para las posibles combinaciones de interfaces Ethernet y seriales en el dispositivo. En esta tabla, no se incluye ningún otro tipo de interfaz, si bien puede haber interfaces de otro tipo en un router determinado. La interfaz BRI ISDN es un ejemplo de esto. La cadena entre paréntesis es la abreviatura legal que se puede utilizar en un comando de Cisco IOS Cisco para representar la interfaz.[m
+[31m-[m
+[1mdiff --git "a/PROGRAMACI\303\223N ACAD\303\211MICA - COMPUTACI\303\223N II G11.pdf" "b/PROGRAMACI\303\223N ACAD\303\211MICA - COMPUTACI\303\223N II G11.pdf"[m
+[1mdeleted file mode 100644[m
+[1mindex 2fdab44..0000000[m
+[1m--- "a/PROGRAMACI\303\223N ACAD\303\211MICA - COMPUTACI\303\223N II G11.pdf"[m	
+[1m+++ /dev/null[m
+[36m@@ -1,98 +0,0 @@[m
+[31m-GESTIONA MEJOR TU TIEMPO y CONVIÉRTETE EN UN ESPECIALISTA EN[m
+[31m-              COMPUTACIÓN - MODALIDAD SEMIPRESENCIAL[m
+[31m-[m
+[31m-Nuestro Programa de Computación Semipresencial ha sido diseñado bajo el modelo de enseñanza virtual[m
+[31m-mixto o blended learning, con una metodología innovadora que combina adecuadamente tu[m
+[31m-autoaprendizaje mediada por la tecnología con el soporte académico complementario a través de las[m
+[31m-tutorías virtuales y presenciales. Ahora puedes estudiar desde cualquier lugar y horario, además podrás[m
+[31m-retroalimentar tus conocimientos participando de las tutorías con los docentes expertos.[m
+[31m-[m
+[31m-VENTAJAS:[m
+[31m-[m
+[31m- Sesiones presenciales y virtuales.[m
+[31m- Material educativo y video tutoriales disponibles las 24 horas del día en nuestra plataforma virtual.[m
+[31m- Flexibilidad en cuanto a lugar y horarios de estudio.[m
+[31m- Sistema de aprendizaje 100% práctico.[m
+[31m- Plataforma virtual de aprendizaje y de videoconferencias, de fácil acceso y gestión para el[m
+[31m-[m
+[31m-    desarrollo del curso.[m
+[31m- Certificación progresiva por 80 ha por cada nivel de computación.[m
+[31m- Certificación final del programa como ESPECIALISTA EN APLICACIONES INFORMÁTICAS por 240 ha.[m
+[31m- MICROSOFT OFFICE 365 completamente gratis para todos los estudiantes.[m
+[31m- Docentes certificados internacionalmente, con amplia experiencia académica.[m
+[31m- Optimización de su tiempo y costos sin dejar de recibir educación de calidad.[m
+[31m-[m
+[31m-REQUISITOS PARA LA SESIÓN VIRTUAL:[m
+[31m-[m
+[31m- Computador personal Core 2 Duo o superior, mínimo 4 Gb de RAM[m
+[31m- Acceso a internet: 4 Mbps mínimo[m
+[31m- Auriculares o micrófono y parlantes (uso obligatorio)[m
+[31m- Cámara Web[m
+[31m- Software, de acuerdo al nivel de computación[m
+[31m-[m
+[31m-CONSIDERACIONES:[m
+[31m-[m
+[31m- Cumplir con la presentación de las actividades de aprendizajes asignados en la fecha y tiempos, de[m
+[31m-    acuerdo a la programación académica establecida.[m
+[31m-[m
+[31m- Las evaluaciones virtuales serán desarrolladas en una fecha y hora determinada según la[m
+[31m-    programación académica.[m
+[31m-[m
+[31m- Las evaluaciones parcial y final serán presenciales en los laboratorios de la Universidad.[m
+[31m- El alumno que por algún motivo no rinda su examen parcial o final presencial, podrá rendirlo en el[m
+[31m-[m
+[31m-    periodo de examen de rezagado, de no presentarse será calificado con nota cero (0).[m
+[31m-[m
+[31m-INFORMES:[m
+[31m-[m
+[31m-Av. Carretera Central Km 9 – ATE VITARTE[m
+[31m-Teléfono: 2009030 Anexo - 8633[m
+[31m-[m
+[31m-                                                                                                                         1[m
+[31m-PROGRAMACIÓN ACADÉMICA:   Duración: 05 semanas               Grupo: 11                   Docente: VENERO[m
+[31m-[m
+[31m-  Inicio: 03 de agosto[m
+[31m-[m
+[31m-SEMANA SESIÓN DE CLASES FECHA  HORA                AMBIENTE  DURACIÓN      SESIONES A       PRODUCTO         PLAZO[m
+[31m-                                                                4 horas   DESARROLLAR      ACADÉMICO        MÁXIMO[m
+[31m-    Presencial           03/08/2019 08:00 – 13:00  D202                                                    03/08/2019[m
+[31m-                                                                               S1 y S2      Actividad de    11:59 pm[m
+[31m-                                                                                          Autoaprendizaje[m
+[31m-                                                                                                           05/08/2019[m
+[31m-01                                                                                                          11:59 pm[m
+[31m-[m
+[31m-    Sesión Virtual       04/08/2019 21:30 – 22:40  Virtual   2 horas      S3 y S4           Actividad de   10/08/2019[m
+[31m-                                                             4 horas      S5 y S6         Autoaprendizaje   11:59 pm[m
+[31m-    Presencial           10/08/2019 08:00 – 13:00  D202      2 horas      S7 y S8[m
+[31m-                                                             2 horas                             Foro      12/08/2019[m
+[31m-02                                                           2 horas                        Actividad de    11:59 pm[m
+[31m-                                                             4 horas                      Autoaprendizaje[m
+[31m-    Sesión Virtual       11/08/2019 21:30 – 22:40  Virtual   2 horas                        Actividad de   12/08/2019[m
+[31m-                                                             4 horas                      Autoaprendizaje  Inicio: 20:20[m
+[31m-                                                                                          Examen Virtual[m
+[31m-                                                                                                           19/08/2019[m
+[31m-                                                                                               2 horas      11:59 pm[m
+[31m-[m
+[31m-    Presencial           17/08/2019 08:00 – 10:30  D202                   EXAMEN PARCIAL                   24/08/2019[m
+[31m-                                                                                                            11:59 pm[m
+[31m-03                                                                                          Actividad de[m
+[31m-                                                                                          Autoaprendizaje  26/08/2019[m
+[31m-    Sesión Virtual       18/08/2019 21:30 – 22:40  Virtual                S9 y S10                          11:59 pm[m
+[31m-                                                                          S11 y S12              Foro[m
+[31m-    Presencial           24/08/2019 08:00 – 13:00  D202                   S13 y S14                        26/08/2019[m
+[31m-                                                                          S15 y S16         Actividad de   Inicio: 20:20[m
+[31m-04                                                                                        Autoaprendizaje  31/08/2019[m
+[31m-[m
+[31m-    Sesión Virtual       25/08/2019 21:30 – 22:40  Virtual                                  Actividad de    11:59 pm[m
+[31m-                                                                                          Autoaprendizaje[m
+[31m-    Presencial           31/08/2019 08:00 – 13:00  D202                                   Examen Virtual[m
+[31m-[m
+[31m-05                                                                                             2 horas[m
+[31m-[m
+[31m-                                                                                            Actividad de[m
+[31m-                                                                                          Autoaprendizaje[m
+[31m-[m
+[31m-    Sesión Virtual       01/09/2019 21:30 – 23:30  Virtual   2 horas      EXAMEN FINAL[m
+[31m-[m
+[31m-                                                                                                                          2[m
+[31m-[m
+\ No newline at end of file[m
+[1mdiff --git a/Putty.exe b/Putty.exe[m
+[1mdeleted file mode 100644[m
+[1mindex e9bbe44..0000000[m
+Binary files a/Putty.exe and /dev/null differ
+[1mdiff --git a/Tarea 01.docx b/Tarea 01.docx[m
+[1mdeleted file mode 100644[m
+[1mindex b293776..0000000[m
+[1m--- a/Tarea 01.docx[m	
+[1m+++ /dev/null[m
+[36m@@ -1,27 +0,0 @@[m
+[31m-¿Qué camino debemos tomar?[m
+[31m-Objetivos[m
+[31m-Explicar los beneficios del uso de rutas estáticas.[m
+[31m-Situación[m
+[31m-Un evento deportivo de gran envergadura tendrá lugar en su ciudad. Para asistir al evento, usted hizo planes precisos de modo de llegar con puntualidad al estadio para ver el juego completo.[m
+[31m-Para ir al evento, hay dos caminos que puede tomar: [m
+[31m-   * Autopista: es fácil de seguir y está permitido conducir a altas velocidades. [m
+[31m-   * Ruta directa alternativa: encontró esta ruta en un mapa de la ciudad. Según ciertas condiciones, como la cantidad de tráfico o la congestión, esta podría ser la forma de llegar al estadio a tiempo.[m
+[31m-Con un compañero, analice estas opciones. Elija una ruta de preferencia para llegar al estadio a tiempo para ver cada segundo del gran evento deportivo.[m
+[31m-Compare sus opciones de preferencia con el tráfico de la red, ¿qué ruta elegiría para transmitir comunicaciones de datos para su pequeña o mediana empresa? ¿Elegiría la ruta más rápida, la más fácil o la ruta alternativa, directa? Justifique su elección.[m
+[31m-Complete el archivo .pdf con la actividad de creación de modelos y prepárese para justificar sus respuestas ante la clase o con otro grupo.[m
+[31m-Recursos necesarios[m
+[31m-   Ninguno[m
+[31m-Reflexión [m
+[31m-¿Qué ruta eligió como su primera opción de preferencia? ¿Según qué criterios tomó esta decisión?[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-En el caso de haber congestión en cualquiera de las rutas, ¿esto cambiaría la ruta que tomaría para llegar al estadio? Explique su respuesta.[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-Una frase conocida que se puede discutir es "la distancia más corta entre dos puntos es una línea recta". ¿Esto siempre es así con la entrega de datos de red? ¿Cómo compara su respuesta con esta situación de la actividad de creación de modelos?[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m- [m
+[1mdiff --git a/Tarea 02.docx b/Tarea 02.docx[m
+[1mdeleted file mode 100644[m
+[1mindex 7247328..0000000[m
+[1m--- a/Tarea 02.docx[m	
+[1m+++ /dev/null[m
+[36m@@ -1,55 +0,0 @@[m
+[31m-¿Cuánto cuesta?[m
+[31m-Objetivos[m
+[31m-Explicar el funcionamiento de los protocolos de routing dinámico.[m
+[31m-Situación[m
+[31m-En esta actividad de creación de modelos, se ilustra el concepto de red de costo de routing. [m
+[31m-Para completar las situaciones de la actividad, formará parte de un equipo de cinco estudiantes que recorren distintas rutas. Cada grupo debe contar con una cámara digital o un dispositivo portátil (BYOD) con cámara, un cronómetro y el archivo para estudiantes de esta actividad. Una persona, seleccionada por cada grupo, se desempeñará como fotógrafo y secretario del evento. Los cuatro miembros del equipo restantes participarán activamente en las situaciones que se describen a continuación.[m
+[31m-Para desarrollar estas actividades, pueden utilizarse un aula, un pasillo, el área de atletismo al aire libre o el estacionamiento de la escuela o universidad, o cualquier otra ubicación.[m
+[31m-Actividad 1[m
+[31m-La persona más alta del grupo establece una línea de salida y una de llegada mediante la marcación de 15 pasos desde el inicio hasta la meta, lo que indica la distancia de la ruta del equipo. Cada estudiante dará 15 pasos desde la línea de salida hasta la de llegada y se detendrá en el decimoquinto paso; no puede dar ningún paso más. [m
+[31m-Nota: No todos los estudiantes recorrerán la misma distancia desde la línea de largada debido a las diferencias de altura y del largo de los pasos. El fotógrafo tomará una foto grupal de la ubicación final del equipo completo después de dar los 15 pasos requeridos. [m
+[31m-Actividad 2[m
+[31m-Se establecerá una nueva línea de salida y de llegada; sin embargo, esta vez se establecerá una distancia más larga que la especificada en la actividad 1 para la ruta. Para crear esta ruta específica, no hay un máximo de pasos como base. De a uno por vez, los estudiantes "recorrerán la nueva ruta de principio a fin, dos veces". [m
+[31m-Cada miembro del equipo debe contar los pasos que necesitó para completar la ruta. El secretario medirá el tiempo de cada estudiante y, cuando cada miembro del equipo finalice la ruta, registrará el tiempo que le llevó completar toda la ruta y cuántos pasos fueron necesarios, según el recuento de cada miembro del equipo y el registro en el archivo para estudiantes.[m
+[31m-Una vez que se hayan completado ambas actividades, los equipos usarán la fotografía digital tomada para la actividad 1 y los datos que se registraron en el archivo de la actividad 2 para responder las preguntas de reflexión.[m
+[31m-Si el tiempo lo permite, las respuestas grupales se pueden analizar en clase.[m
+[31m-Recursos necesarios[m
+[31m-Cámara digital o BYOD para registrar los resultados del equipo en la actividad 1. Los datos de la actividad 2 se basan únicamente en la cantidad de pasos que se den y el tiempo que se necesite para completar la ruta, por lo que no se necesita una cámara para la actividad 2.[m
+[31m-Cronómetro.[m
+[31m-Archivo para estudiantes que se proporciona con la actividad de creación de modelos para que se puedan registrar los resultados de la actividad 2 a medida que cada estudiante completa la ruta.[m
+[31m-Situación: matriz de registro para la parte 2[m
+[31m-[m
+[31m-Nombre del miembro del equipo[m
+[31m-Tiempo utilizado para completar la ruta[m
+[31m-Cantidad de pasos que se dieron para completar la ruta[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-Preguntas de reflexión[m
+[31m-El fotógrafo tomó una fotografía del progreso del equipo después de que se dieron los 15 pasos de la actividad 1. Probablemente, algunos miembros del equipo no llegaron a la línea de llegada después de dar el paso n.º[ ]15, debido a la diferencia de altura y de longitud del paso. ¿Qué cree que ocurriría si los datos de la red no llegaran a la línea de llegada, o el destino, en la cantidad permitida de saltos o pasos? [m
+[31m-_______________________________________________________________________________________[m
+[31m-¿Qué se podría hacer para ayudar a los miembros del equipo a llegar a la meta si no la alcanzaron en la actividad 1?[m
+[31m-   _______________________________________________________________________________________[m
+[31m-¿Cuál sería la persona indicada para entregar los datos según la ruta de red completada en la actividad 2? Justifique su respuesta.[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-Con los datos registrados durante la actividad 2 y un límite de 255 pasos, o saltos, ¿todos los miembros del equipo dieron más de 255 pasos para completar la ruta? ¿Qué ocurriría si tuvieran que parar en el paso, o salto, n.º[ ]254? [m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-Use los datos que se registraron en la actividad 2. Si todos los miembros del equipo llegaron a la meta en 255 pasos o menos, ¿diría que los parámetros para la ruta bastaron para completarla correctamente? Justifique su respuesta.[m
+[31m-   _______________________________________________________________________________________ [m
+[31m-En el routing de red, se establecen diferentes parámetros para los protocolos de routing. Use los datos registrados en la actividad 2. ¿Seleccionaría el tiempo, la cantidad de pasos (o saltos) o una combinación de ambos como su tipo preferido de routing? Incluya, al menos, tres razones para su respuesta.[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[31m-   _______________________________________________________________________________________[m
+[1mdiff --git a/piero123.txt b/piero123.txt[m
+[1mdeleted file mode 100644[m
+[1mindex e69de29..0000000[m
+[1mdiff --git a/semana1.1.txt b/semana1.1.txt[m
+[1mdeleted file mode 100644[m
+[1mindex e9699a0..0000000[m
+[1m--- a/semana1.1.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1,34 +0,0 @@[m
+[31m-ing. Leonel Venero Benavente[m
+[31m-cables cruzados (2 m y 4 m)[m
+[31m-cables directos (2 m y 4 m)[m
+[31m-extension 8m (CONECTOR Y JACK)[m
+[31m-conector---------B----------jack[m
+[31m-[m
+[31m-modelo tcp/ip [m
+[31m-aplicacion[m
+[31m-transporte[m
+[31m-red[m
+[31m-Acceso a la red[m
+[31m-[m
+[31m-PUTTY ROUTER[m
+[31m-1. serial   :   windows + pause  vizualizar el COM en el administrador de dispositivos[m
+[31m-2. open     :   enter / despues no[m
+[31m-3. enable / erase starup-config[m
+[31m-4. reload   : para resetear el router[m
+[31m- el conector macho es para trasmision de datos y hembra para comunicacion de datos / si un router trabaja con clock rate, solo con ese se usara[m
+[31m-5. line console 0 / password redes / login / exit[m
+[31m-6. enable password ccna / exit / wr[m
+[31m- poner primero la contra de la consola luego el passwoed de del router[m
+[31m- DCE HEMBRA entorno de comunicacion de datos (clock rate permitido)   DTE MACHO entorno de transmision de datos[m
+[31m-7. enable / show ip int brief / config t / int s0/1/0 / clock rate 128000  /  exit[m
+[31m-8. int g0/0 / ip address 172.16.0.1 255.255.0.0 / no shutdown / end[m
+[31m--------------------------------------------------------------------------------------------[m
+[31m-DESPUES DE BREAK[m
+[31m-SWITCH[m
+[31m-1. show version / enable / show flash / show ip int brief[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m- [m
+[31m-[m
+[31m-[m
+[1mdiff --git a/semana2.txt b/semana2.txt[m
+[1mdeleted file mode 100644[m
+[1mindex e69de29..0000000[m
